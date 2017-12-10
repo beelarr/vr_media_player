@@ -100,6 +100,7 @@ export default class DashboardLayout extends Component {
                     }}>
                     <MenuButtons />
                     <TileButtons
+                        previews={this.props.previews}
                         updateStage={this.updateStage.bind(this)}
                         borderWidths={this.state.borderWidths}
                     />
