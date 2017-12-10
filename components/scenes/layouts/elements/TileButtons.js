@@ -4,11 +4,14 @@ import {
     Text,
     View,
     VrButton,
-    Image
+    Image,
+    asset
 } from 'react-vr'
 
 export default class TileButtons extends Component {
     render() {
+        const stage = this.props.stage;
+
         return (
             <View style={{
                 marginTop: -0.09,
@@ -29,14 +32,29 @@ export default class TileButtons extends Component {
 
                         }}>
                         <VrButton onClick={ () => this.props.updateStage(1) }>
-                            <Image
-                                source={{uri: this.props.previews[0]}}
-                                style={{
-                                    width: 1,
-                                    height: 0.6,
-                                    borderWidth: this.props.borderWidths[0],
-                                    borderColor: "#A482DF",
-                                }}/>
+                            {stage === 1 ? (
+                                <Image
+                                    source={{uri: this.props.previews[0]}}
+                                    style=
+                                        {{
+                                            width: 1,
+                                            height: 0.6,
+                                            borderWidth: this.props.borderWidths[0],
+                                            borderColor: "#A482DF"
+                                        }}
+                                />
+                            ): (
+                                <Image
+                                    source={asset(this.props.environments[0])}
+                                    style=
+                                        {{
+                                            width: 1,
+                                            height: 0.6,
+                                            borderWidth: this.props.borderWidths[0],
+                                            borderColor: "#A482DF"
+                                        }}
+                                />
+                            )}
                         </VrButton>
                     </View>
                     <View
@@ -47,14 +65,29 @@ export default class TileButtons extends Component {
 
                         }}>
                         <VrButton onClick={ () => this.props.updateStage(2) }>
-                            <Image
-                                source={{uri: this.props.previews[1]}}
-                                style={{
-                                    width: 1,
-                                    height: 0.6,
-                                    borderWidth: this.props.borderWidths[1],
-                                    borderColor: "#A482DF",
-                                }}/>
+                            {stage === 1 ? (
+                                <Image
+                                    source={{uri: this.props.previews[1]}}
+                                    style=
+                                        {{
+                                            width: 1,
+                                            height: 0.6,
+                                            borderWidth: this.props.borderWidths[1],
+                                            borderColor: "#A482DF"
+                                        }}
+                                />
+                            ): (
+                                <Image
+                                    source={asset(this.props.environments[1])}
+                                    style=
+                                        {{
+                                            width: 1,
+                                            height: 0.6,
+                                            borderWidth: this.props.borderWidths[1],
+                                            borderColor: "#A482DF"
+                                        }}
+                                />
+                            )}
                         </VrButton>
                     </View>
                 </View>
@@ -72,14 +105,29 @@ export default class TileButtons extends Component {
 
                         }}>
                         <VrButton onClick={ () => this.props.updateStage(3) }>
-                            <Image
-                                source={{uri: this.props.previews[2]}}
-                                style={{
-                                    width: 1,
-                                    height: 0.6,
-                                    borderWidth: this.props.borderWidths[2],
-                                    borderColor: "#A482DF",
-                                }}/>
+                            {stage === 1 ? (
+                                <Image
+                                    source={{uri: this.props.previews[2]}}
+                                    style=
+                                        {{
+                                            width: 1,
+                                            height: 0.6,
+                                            borderWidth: this.props.borderWidths[2],
+                                            borderColor: "#A482DF"
+                                        }}
+                                />
+                            ): (
+                                <Image
+                                    source={asset(this.props.environments[2])}
+                                    style=
+                                        {{
+                                            width: 1,
+                                            height: 0.6,
+                                            borderWidth: this.props.borderWidths[2],
+                                            borderColor: "#A482DF"
+                                        }}
+                                />
+                            )}
                         </VrButton>
                     </View>
                     <View
@@ -91,14 +139,29 @@ export default class TileButtons extends Component {
                         }}
                     >
                         <VrButton onClick={ () => this.props.updateStage(4) }>
-                            <Image
-                                source={{uri: this.props.previews[3]}}
-                                style={{
-                                    width: 1,
-                                    height: 0.6,
-                                    borderWidth: this.props.borderWidths[3],
-                                    borderColor: "#A482DF",
-                                }}/>
+                            {stage === 1 ? (
+                                <Image
+                                    source={{uri: this.props.previews[3]}}
+                                    style=
+                                        {{
+                                            width: 1,
+                                            height: 0.6,
+                                            borderWidth: this.props.borderWidths[3],
+                                            borderColor: "#A482DF"
+                                        }}
+                                />
+                            ): (
+                                <Image
+                                    source={asset(this.props.environments[3])}
+                                    style=
+                                        {{
+                                            width: 1,
+                                            height: 0.6,
+                                            borderWidth: this.props.borderWidths[3],
+                                            borderColor: "#A482DF"
+                                        }}
+                                />
+                            )}
                         </VrButton>
                     </View>
                 </View>
@@ -116,14 +179,29 @@ export default class TileButtons extends Component {
 
                         }}>
                         <VrButton onClick={ () => this.props.updateStage(5) }>
-                            <Image
-                                source={{uri: this.props.previews[4]}}
-                                style={{
-                                    width: 1,
-                                    height: 0.6,
-                                    borderWidth: this.props.borderWidths[4],
-                                    borderColor: "#A482DF",
-                                }}/>
+                            {stage === 1 ? (
+                                <Image
+                                    source={{uri: this.props.previews[4]}}
+                                    style=
+                                        {{
+                                            width: 1,
+                                            height: 0.6,
+                                            borderWidth: this.props.borderWidths[4],
+                                            borderColor: "#A482DF"
+                                        }}
+                                />
+                            ): (
+                                <Image
+                                    source={asset(this.props.environments[4])}
+                                    style=
+                                        {{
+                                            width: 1,
+                                            height: 0.6,
+                                            borderWidth: this.props.borderWidths[4],
+                                            borderColor: "#A482DF"
+                                        }}
+                                />
+                            )}
                         </VrButton>
                     </View>
                     <View
@@ -134,14 +212,29 @@ export default class TileButtons extends Component {
 
                         }}>
                         <VrButton onClick={ () => this.props.updateStage(6) }>
-                            <Image
-                                source={{uri: this.props.previews[5]}}
-                                style={{
-                                    width: 1,
-                                    height: 0.6,
-                                    borderWidth: this.props.borderWidths[5],
-                                    borderColor: "#A482DF",
-                                }}/>
+                            {stage === 1 ? (
+                                <Image
+                                    source={{uri: this.props.previews[5]}}
+                                    style=
+                                        {{
+                                            width: 1,
+                                            height: 0.6,
+                                            borderWidth: this.props.borderWidths[5],
+                                            borderColor: "#A482DF"
+                                        }}
+                                />
+                            ): (
+                                <Image
+                                    source={asset(this.props.environments[5])}
+                                    style=
+                                        {{
+                                            width: 1,
+                                            height: 0.6,
+                                            borderWidth: this.props.borderWidths[5],
+                                            borderColor: "#A482DF"
+                                        }}
+                                />
+                            )}
                         </VrButton>
                     </View>
                 </View>

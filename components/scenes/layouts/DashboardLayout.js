@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
-import { View, Animated } from 'react-vr';
+import {
+    View,
+    Animated,
+
+} from 'react-vr';
 
 import { Easing } from 'react-native';
 
@@ -18,7 +22,17 @@ export default class DashboardLayout extends Component {
       slideLeft: new Animated.Value(-5),
       fadeIn: new Animated.Value(0),
       text: this.props.text,
-      borderWidths: [0, 0, 0, 0, 0, 0]
+      borderWidths: [0, 0, 0, 0, 0, 0],
+      environments: [
+          "title-background.jpg",
+          "fort-night.jpg",
+          "Arizona.jpg",
+          "Hawaii.jpg",
+          "New Hampshire.jpg",
+          "Texas.jpg"
+      ],
+      stage: 1
+
 
     };
 
@@ -26,7 +40,8 @@ export default class DashboardLayout extends Component {
         this.setState({
             color1: "#DBDAF1",
             color2: "#A482DF",
-            text: 'Watch Video'
+            text: 'Watch Video',
+            stage: 2,
         })
     }
 
@@ -103,6 +118,8 @@ export default class DashboardLayout extends Component {
                         previews={this.props.previews}
                         updateStage={this.updateStage.bind(this)}
                         borderWidths={this.state.borderWidths}
+                        stage={this.state.stage}
+                        environments={this.state.environments}
                     />
                     <ProgressCircles color1={this.state.color1} color2={this.state.color2} />
                 </Animated.View>
