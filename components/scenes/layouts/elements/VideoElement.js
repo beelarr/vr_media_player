@@ -36,7 +36,7 @@ export default class VideoElement extends Component {
                 }}>
                 <Video
                     style={{ height: 4 }}
-                    source={asset('fireplace.mp4')}
+                    source={{uri: this.props.streamURL}}
                 />
 
             </Animated.View>

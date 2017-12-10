@@ -16,6 +16,9 @@ export default class Dashboard extends Component {
                     previews={this.props.previews}
                     text={this.props.text}
                     captureSelection={this.props.captureSelection}
+                    changeScenes={this.props.changeScenes}
+                    scene={this.props.scene}
+                    environments={this.props.environments}
 
                 />
             </View>

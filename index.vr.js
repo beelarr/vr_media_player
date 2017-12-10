@@ -18,7 +18,14 @@ export default class media_player extends React.Component {
       Ids: '',
       selectedStreamID: '',
       selectedEnv: '',
-      scene: 1
+      scene: 1,
+      environments: [
+          "title-background.jpg",
+          "fort-night.jpg",
+          "Arizona.jpg",
+          "Hawaii.jpg",
+          "New Hampshire.jpg",
+          "Texas.jpg"]
   };
 
   gatherPreviews = data => {
@@ -30,23 +37,25 @@ export default class media_player extends React.Component {
 
   gatherStreamIds = data => {
     const Ids = data.data.featured.map( featured => {
-      return featured.stream._id
-    })
+      return featured.stream.channel.name
+    });
     this.setState({Ids: Ids})
   };
 
   captureSelection = (stage, value) => {
       switch (stage) {
           case 1:
-              this.setState({selectedStreamID: value});
+              console.log('Id', this.state.Ids[value-1]);
+              this.setState({selectedStreamID: this.state.Ids[value-1]});
               break;
           case 2:
-              this.setState({selectedEnv: value});
+              console.log('Id', this.state.Ids[value-1]);
+              this.setState({selectedEnv: this.state.environments[value-1]});
               break;
       }
   };
 
-  changeScenes = nextScene => {
+  changeScenes = (nextScene, selectionIndex) => {
       switch (nextScene) {
           case 1:
               this.setState({scene: 1});
@@ -55,10 +64,11 @@ export default class media_player extends React.Component {
               this.setState({scene: 2});
               break;
           case 3:
+              this.captureSelection(2, selectionIndex);
               this.setState({scene: 3});
               break;
       }
-  }
+  };
 
 
   componentWillMount(){
@@ -91,13 +101,19 @@ export default class media_player extends React.Component {
                             previews={this.state.previews}
                             showButton={false}
                             text={"Select Environment"}
+                            changeScenes={this.changeScenes}
+                            scene={this.state.scene}
+                            environments={this.state.environments}
                         />
                     ) : (
                         <VideoPlayer
-                            streamID={selectedStreamID}
-                            env={selectedEnv}
+                            streamID={this.state.selectedStreamID}
+                            env={this.state.selectedEnv}
                             showButton={true}
-                            text={"Back to Dashboard"}/>
+                            text={"Back to Dashboard"}
+                            changeScenes={this.changeScenes}
+                            scene={this.state.scene}
+                        />
                     )
                 )}
             </View>

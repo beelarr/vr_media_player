@@ -23,20 +23,14 @@ export default class DashboardLayout extends Component {
       fadeIn: new Animated.Value(0),
       text: this.props.text,
       borderWidths: [0, 0, 0, 0, 0, 0],
-      environments: [
-          "title-background.jpg",
-          "fort-night.jpg",
-          "Arizona.jpg",
-          "Hawaii.jpg",
-          "New Hampshire.jpg",
-          "Texas.jpg"
-      ],
-      stage: 1
+      stage: 1,
+      selectionIndex: ""
 
 
     };
 
     updateScene = () => {
+        this.props.captureSelection(this.state.stage, this.state.selectionIndex);
         this.setState({
             color1: "#DBDAF1",
             color2: "#A482DF",
@@ -51,22 +45,40 @@ export default class DashboardLayout extends Component {
         }
         switch (input) {
             case 1:
-                this.setState({borderWidths: [0.05, 0, 0, 0, 0, 0]});
+                this.setState({
+                    borderWidths: [0.05, 0, 0, 0, 0, 0],
+                    selectionIndex: 1
+                });
                 break;
             case 2:
-                this.setState({borderWidths: [0, 0.05, 0, 0, 0, 0]});
+                this.setState({
+                    borderWidths: [0, 0.05, 0, 0, 0, 0],
+                    selectionIndex: 2
+                });
                 break;
             case 3:
-                this.setState({borderWidths: [0, 0, 0.05, 0, 0, 0]});
+                this.setState({
+                    borderWidths: [0, 0, 0.05, 0, 0, 0],
+                    selectionIndex: 3
+                });
                 break;
             case 4:
-                this.setState({borderWidths: [0, 0, 0, 0.05, 0, 0]});
+                this.setState({
+                    borderWidths: [0, 0, 0, 0.05, 0, 0],
+                    selectionIndex: 4
+                });
                 break;
             case 5:
-                this.setState({borderWidths: [0, 0, 0, 0, 0.05, 0]});
+                this.setState({
+                    borderWidths: [0, 0, 0, 0, 0.05, 0],
+                    selectionIndex: 5
+                });
                 break;
             case 6:
-                this.setState({borderWidths: [0, 0, 0, 0, 0, 0.05]});
+                this.setState({
+                    borderWidths: [0, 0, 0, 0, 0, 0.05],
+                    selectionIndex: 6
+                });
                 break;
         }
     }
@@ -116,10 +128,10 @@ export default class DashboardLayout extends Component {
                     <MenuButtons />
                     <TileButtons
                         previews={this.props.previews}
-                        updateStage={this.updateStage.bind(this)}
+                        updateStage={this.updateStage}
                         borderWidths={this.state.borderWidths}
                         stage={this.state.stage}
-                        environments={this.state.environments}
+                        environments={this.props.environments}
                     />
                     <ProgressCircles color1={this.state.color1} color2={this.state.color2} />
                 </Animated.View>
@@ -139,7 +151,12 @@ export default class DashboardLayout extends Component {
                     <Button
                         updateScene={this.updateScene}
                         showButton={this.state.showButton}
-                        text={this.state.text} />
+                        text={this.state.text}
+                        changeScenes={this.props.changeScenes}
+                        scene={this.props.scene}
+                        stage={this.state.stage}
+                        selectionIndex={this.state.selectionIndex}
+                    />
                 </View>
             </View>
         )
