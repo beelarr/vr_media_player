@@ -17,7 +17,7 @@ export default class VideoPlayerLayout extends Component {
                         layoutOrigin: [0.5, 0.5],
                         transform: [{translate: [0, 0, -5]}]
                     }}>
-                    <VideoElement streamURL={this.state.streamURL} />
+                    <VideoElement streamURL={this.props.streamURL} />
                 </View>
                 <View
                     style={{
