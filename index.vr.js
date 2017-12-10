@@ -41,7 +41,7 @@ export default class media_player extends React.Component {
           this.gatherStreamIds(data);
         })
         .catch(e => {
-          console.log('Error', e.message);
+          console.log('Error', error);
         });
   }
 

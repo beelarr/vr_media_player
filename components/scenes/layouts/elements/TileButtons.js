@@ -4,6 +4,7 @@ import {
     Text,
     View,
     VrButton,
+    Image
 } from 'react-vr'
 
 export default class TileButtons extends Component {
@@ -25,19 +26,17 @@ export default class TileButtons extends Component {
                             margin: 0.1,
                             height: 0.6,
                             backgroundColor: "#CAB9E5",
-                            borderWidth: this.props.borderWidths[0],
-                            borderColor: "#A482DF",
-                            borderStyle: "solid"
+
                         }}>
                         <VrButton onClick={ () => this.props.updateStage(1) }>
-                            <Text
+                            <Image
+                                source={{uri: this.props.previews[0]}}
                                 style={{
-                                    fontSize: 0.2,
-                                    textAlign: 'center',
-                                    color: "#FFFFFF",
-                                }}>
-
-                            </Text>
+                                    width: 1,
+                                    height: 0.6,
+                                    borderWidth: this.props.borderWidths[0],
+                                    borderColor: "#A482DF",
+                                }}/>
                         </VrButton>
                     </View>
                     <View
@@ -45,19 +44,17 @@ export default class TileButtons extends Component {
                             margin: 0.1,
                             height: 0.6,
                             backgroundColor: "#CAB9E5",
-                            borderWidth: this.props.borderWidths[1],
-                            borderColor: "#A482DF",
-                            borderStyle: "solid"
+
                         }}>
                         <VrButton onClick={ () => this.props.updateStage(2) }>
-                            <Text
+                            <Image
+                                source={{uri: this.props.previews[1]}}
                                 style={{
-                                    fontSize: 0.2,
-                                    textAlign: 'center',
-                                    color: "#FFFFFF"
-                                }}>
-
-                            </Text>
+                                    width: 1,
+                                    height: 0.6,
+                                    borderWidth: this.props.borderWidths[1],
+                                    borderColor: "#A482DF",
+                                }}/>
                         </VrButton>
                     </View>
                 </View>
@@ -72,19 +69,17 @@ export default class TileButtons extends Component {
                             margin: 0.1,
                             height: 0.6,
                             backgroundColor: "#CAB9E5",
-                            borderWidth: this.props.borderWidths[2],
-                            borderColor: "#A482DF",
-                            borderStyle: "solid"
+
                         }}>
                         <VrButton onClick={ () => this.props.updateStage(3) }>
-                            <Text
+                            <Image
+                                source={{uri: this.props.previews[2]}}
                                 style={{
-                                    fontSize: 0.2,
-                                    textAlign: 'center',
-                                    color: "#FFFFFF"
-                                }}>
-
-                            </Text>
+                                    width: 1,
+                                    height: 0.6,
+                                    borderWidth: this.props.borderWidths[2],
+                                    borderColor: "#A482DF",
+                                }}/>
                         </VrButton>
                     </View>
                     <View
@@ -92,20 +87,18 @@ export default class TileButtons extends Component {
                             margin: 0.1,
                             height: 0.6,
                             backgroundColor: "#CAB9E5",
-                            borderWidth: this.props.borderWidths[3],
-                            borderColor: "#A482DF",
-                            borderStyle: "solid"
+
                         }}
                     >
                         <VrButton onClick={ () => this.props.updateStage(4) }>
-                            <Text
+                            <Image
+                                source={{uri: this.props.previews[3]}}
                                 style={{
-                                    fontSize: 0.2,
-                                    textAlign: 'center',
-                                    color: "#FFFFFF"
-                                }}>
-
-                            </Text>
+                                    width: 1,
+                                    height: 0.6,
+                                    borderWidth: this.props.borderWidths[3],
+                                    borderColor: "#A482DF",
+                                }}/>
                         </VrButton>
                     </View>
                 </View>
@@ -120,18 +113,17 @@ export default class TileButtons extends Component {
                             margin: 0.1,
                             height: 0.6,
                             backgroundColor: "#CAB9E5",
-                            borderWidth: this.props.borderWidths[4],
-                            borderColor: "#A482DF",
-                            borderStyle: "solid"
+
                         }}>
                         <VrButton onClick={ () => this.props.updateStage(5) }>
-                            <Text
+                            <Image
+                                source={{uri: this.props.previews[4]}}
                                 style={{
-                                    fontSize: 0.2,
-                                    textAlign: 'center',
-                                    color: "#FFFFFF"
-                                }}>
-                            </Text>
+                                    width: 1,
+                                    height: 0.6,
+                                    borderWidth: this.props.borderWidths[4],
+                                    borderColor: "#A482DF",
+                                }}/>
                         </VrButton>
                     </View>
                     <View
@@ -139,18 +131,17 @@ export default class TileButtons extends Component {
                             margin: 0.1,
                             height: 0.6,
                             backgroundColor: "#CAB9E5",
-                            borderWidth: this.props.borderWidths[5],
-                            borderColor: "#A482DF",
-                            borderStyle: "solid"
+
                         }}>
                         <VrButton onClick={ () => this.props.updateStage(6) }>
-                            <Text
+                            <Image
+                                source={{uri: this.props.previews[5]}}
                                 style={{
-                                    fontSize: 0.2,
-                                    textAlign: 'center',
-                                    color: "#FFFFFF"
-                                }}>
-                            </Text>
+                                    width: 1,
+                                    height: 0.6,
+                                    borderWidth: this.props.borderWidths[5],
+                                    borderColor: "#A482DF",
+                                }}/>
                         </VrButton>
                     </View>
                 </View>
