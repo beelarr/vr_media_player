@@ -22,7 +22,12 @@ export default class TitleLayout extends Component {
                     transform: [{translate: [0, 0, -3]}]
                 }} >
                 <Title />
-                <Button showButton={this.props.showButton} text={this.props.text} />
+                <Button
+                    showButton={this.props.showButton}
+                    text={this.props.text}
+                    changeScenes={this.props.changeScenes}
+                    scene={this.props.scene}
+                />
             </View>
         //insert elements
         )

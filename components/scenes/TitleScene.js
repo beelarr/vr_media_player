@@ -15,7 +15,12 @@ export default class TitleScene extends Component {
         return (
             <View>
                 <Pano source={asset('title-background.jpg')} />
-                <TitleLayout text={this.props.text}/>
+                <TitleLayout
+                    text={this.props.text}
+                    showButton={this.props.showButton}
+                    changeScenes={this.props.changeScenes}
+                    scene={this.props.scene}
+                />
             </View>
         )
     }

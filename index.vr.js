@@ -17,7 +17,8 @@ export default class media_player extends React.Component {
       previews: '',
       Ids: '',
       selectedStreamID: '',
-      selectedEnv: ''
+      selectedEnv: '',
+      scene: 1
   };
 
   gatherPreviews = data => {
@@ -45,6 +46,20 @@ export default class media_player extends React.Component {
       }
   };
 
+  changeScenes = nextScene => {
+      switch (nextScene) {
+          case 1:
+              this.setState({scene: 1});
+              break;
+          case 2:
+              this.setState({scene: 2});
+              break;
+          case 3:
+              this.setState({scene: 3});
+              break;
+      }
+  }
+
 
   componentWillMount(){
     axios.get(`https://api.twitch.tv/kraken/streams/featured?limit=6&client_id=${client_id}`)
@@ -58,25 +73,36 @@ export default class media_player extends React.Component {
         });
   }
 
-  render() {
-    return (
-      <View>
-        {/*<TitleScene showButton={true} text={'Watch a Video'}/>*/}
-        <Dashboard
-            previews={this.state.previews}
-            showButton={false}
-            text={'Select Environment'}
-            captureSelection={this.captureSelection}
-        />
-        {/*<VideoPlayer
-            showButton={true}
-            text={"Back to Dashboard"}
-            streamID={this.state.selectedStreamID}
-            env={this.state.selectedEnv}
-            />*/}
-      </View>
-    );
-  }
+    render() {
+        const scene = this.state.scene;
+        return (
+            <View>
+                {scene === 1 ? (
+                    <TitleScene
+                        showButton={true}
+                        text={"Watch a Video"}
+                        scene={this.state.scene}
+                        changeScenes={this.changeScenes}
+                    />
+                ) : (
+                    scene === 2 ? (
+                        <Dashboard
+                            captureSelection={this.captureSelection}
+                            previews={this.state.previews}
+                            showButton={false}
+                            text={"Select Environment"}
+                        />
+                    ) : (
+                        <VideoPlayer
+                            streamID={selectedStreamID}
+                            env={selectedEnv}
+                            showButton={true}
+                            text={"Back to Dashboard"}/>
+                    )
+                )}
+            </View>
+        );
+    }
 };
 
 AppRegistry.registerComponent('media_player', () => media_player);

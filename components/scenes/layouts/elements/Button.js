@@ -40,6 +40,21 @@ export default class Button extends Component {
 
 
     render() {
+        const showButton = this.props.showButton;
+        const currentScene = this.props.scene;
+        let nextScene;
+        switch (currentScene) {
+            case 1:
+                nextScene = 2;
+                break;
+            case 2:
+                nextScene = 3;
+                break;
+            case 3:
+                nextScene = 1;
+                break;
+        }
+
         return (
             <View>
                 {this.props.showButton ?
@@ -58,7 +73,7 @@ export default class Button extends Component {
                             ]
                         }}>
                         <VrButton
-                            onClick={this.props.updateScene}>
+                            onClick={() => this.props.changeScenes(nextScene)}>
                             <Text
                                 style={{
                                     fontSize: 0.2,
