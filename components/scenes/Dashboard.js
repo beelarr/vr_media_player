@@ -12,7 +12,12 @@ export default class Dashboard extends Component {
         return (
             <View>
                 <Pano source={asset('fort-night.jpg')} />
-                <DashboardLayout previews={this.props.previews} text={this.props.text}/>
+                <DashboardLayout
+                    previews={this.props.previews}
+                    text={this.props.text}
+                    captureSelection={this.props.captureSelection}
+
+                />
             </View>
         )
     }

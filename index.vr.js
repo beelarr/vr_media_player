@@ -15,7 +15,9 @@ export default class media_player extends React.Component {
 
   state = {
       previews: '',
-      Ids: ''
+      Ids: '',
+      selectedStreamID: '',
+      selectedEnv: ''
   };
 
   gatherPreviews = data => {
@@ -26,10 +28,21 @@ export default class media_player extends React.Component {
   };
 
   gatherStreamIds = data => {
-    const IDs = data.data.featured.map( featured => {
+    const Ids = data.data.featured.map( featured => {
       return featured.stream._id
     })
-      console.log('IDs', IDs);
+    this.setState({Ids: Ids})
+  };
+
+  captureSelection = (stage, value) => {
+      switch (stage) {
+          case 1:
+              this.setState({selectedStreamID: value});
+              break;
+          case 2:
+              this.setState({selectedEnv: value});
+              break;
+      }
   };
 
 
@@ -49,8 +62,18 @@ export default class media_player extends React.Component {
     return (
       <View>
         {/*<TitleScene showButton={true} text={'Watch a Video'}/>*/}
-        <Dashboard previews={this.state.previews} showButton={false}  text={'Select Environment'} />
-        {/*<VideoPlayer showButton={true} text={"Back to Dashboard"} />*/}
+        <Dashboard
+            previews={this.state.previews}
+            showButton={false}
+            text={'Select Environment'}
+            captureSelection={this.captureSelection}
+        />
+        {/*<VideoPlayer
+            showButton={true}
+            text={"Back to Dashboard"}
+            streamID={this.state.selectedStreamID}
+            env={this.state.selectedEnv}
+            />*/}
       </View>
     );
   }

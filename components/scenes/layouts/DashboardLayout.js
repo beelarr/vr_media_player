@@ -18,7 +18,7 @@ export default class DashboardLayout extends Component {
     state = {
       color1: "#A482DF",
       color2: "#DBDAF1",
-      showButton: false,
+      showButton: true,
       slideLeft: new Animated.Value(-5),
       fadeIn: new Animated.Value(0),
       text: this.props.text,
