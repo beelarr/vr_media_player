@@ -120,7 +120,7 @@ export default class DashboardLayout extends Component {
                         layoutOrigin: [0.5, 0.5],
                         transform: [
                             {translateX: this.state.slideLeft},
-                            {translateZ: -3}
+                            {translateZ: -5}
                         ],
                         marginTop: -0.3,
                         opacity: this.state.fadeIn

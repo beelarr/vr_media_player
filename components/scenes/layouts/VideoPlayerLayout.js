@@ -15,7 +15,7 @@ export default class VideoPlayerLayout extends Component {
                         alignItems: 'stretch',
                         backgroundColor: '#333333',
                         layoutOrigin: [0.5, 0.5],
-                        transform: [{translate: [0, 0, -5]}]
+                        transform: [{translate: [0, 0, -7]}]
                     }}>
                     <VideoElement streamURL={this.props.streamURL} />
                 </View>
